@@ -17,7 +17,7 @@ void draw() {
   for (int i = 0; i < bubbles.length; ++i) {
     if (!currentlyPausing && bubbles[i].shouldPause(mouseX, mouseY)) {
       bubbles[i].pause();
-      anyBubblesPaused = true;
+      currentlyPausing = true;
     }
     if (!bubbles[i].shouldPause(mouseX, mouseY)) bubbles[i].unPause();
     bubbles[i].move();
