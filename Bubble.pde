@@ -1,5 +1,7 @@
 class Bubble {
 
+  final int DEFAULT_DIAMETER = 200;
+
   int x;
   int y;
   int diameter;
@@ -7,12 +9,14 @@ class Bubble {
   int xDirection;
   int yDirection;
   boolean paused;
+  int label;
 
-  Bubble() {
+  Bubble(int label) {
+    this.label = label;
     x = (int)random(width);
     y = (int)random(height);
     xDirection = yDirection = 1;
-    diameter = 100;
+    diameter = DEFAULT_DIAMETER;
     c = color(random(255));
     paused = false;
   }
@@ -41,6 +45,9 @@ class Bubble {
     stroke(0);
     fill(c, 100);
     ellipse(x, y, diameter, diameter);
+    textSize(24);
+    fill(0);
+    text(label, x, y);
   }
 
   boolean shouldPause(int x, int y) {
