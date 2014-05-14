@@ -1,3 +1,6 @@
+// One solution to pausing the motion of just one object in a collection,
+// when the mouse hovers over that object's position.
+
 final int NUMBER_OF_BUBBLES = 10;
 
 Bubble[] bubbles = new Bubble[NUMBER_OF_BUBBLES];
